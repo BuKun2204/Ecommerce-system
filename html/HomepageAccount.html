@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+     <script src="/js/toggleDropdown.js"></script>
+</head>
+<body>
+    <div class="Header bg-black">
+        <div class="w-full flex items-center justify-between px-4 py-3">
+            <div class="flex-1 text-center text-white">
+                <p class="m-0 transition-transform duration-500 ease-in-out hover:scale-105">
+                    Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
+                    <a href="#" class="underline ">Shop now</a>
+                </p>
+            </div>
+            <div class="NgonNgu relative inline-block">
+                <select name="language" id="language" class="appearance-none bg-black text-white p-2 rounded-none pr-8 focus:outline-none cursor-pointer">
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                    <option value="zh">Chinese</option>
+                </select>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-white absolute right-2 top-1/2 transform -translate-y-1/2 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="Content1 flex justify-around items-center p-4 border-b border-gray-300">
+        <p class="text-xl font-bold">Exclusive</p>
+        <div class="ChucNang flex items-center">
+            <a href="HomepageAccount.html" class="px-2 underline underline-offset-4">Home</a>
+            <a href="Contact.html" class="px-2">Contact</a>
+            <a href="About.html" class="px-2">About us</a>
+            <a href="SignUp.html" class="px-2">Sign up</a>
+        </div>
+        <div class="flex items-center space-x-4">
+            <div class="relative">
+            <input type="text" placeholder="What are you looking for?" class="bg-gray-100 rounded-md pl-2 pr-8 py-2 text-sm focus:outline-none"/>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-500 absolute right-2 top-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1010.5 18a7.5 7.5 0 006.15-3.35z" />
+            </svg>
+        </div>
+         <a href="Wishlist.html" class="p-1 hover:text-black text-gray-600" >
+            <button class="p-1 hover:text-black text-gray-600 cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 cursor-pointer" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21.364l-7.682-8.682a4.5 4.5 0 010-6.364z" />
+                </svg>
+            </button>
+        </a>
+      <a href="Cart.html" class="p-1 hover:text-black text-gray-600">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+        </svg>
+      </a>
+      <div class="relative">
+            <button 
+                onclick="toggleDropdown()" 
+                class="p-2 hover:text-black text-gray-600 cursor-pointer transition"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                </svg>
+            </button>
+
+            <!-- Dropdown Menu -->
+            <div 
+                id="accountDropdown" 
+                class="hidden absolute right-0 mt-2 w-56 bg-gradient-to-b from-gray-700 to-gray-900 rounded-lg shadow-lg overflow-hidden z-50"
+            >
+                <div class="py-2">
+                    
+                    <!-- Manage My Account -->
+                    <a href="Account.html" class="flex items-center gap-3 px-4 py-3 text-white hover:bg-white/10 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                        </svg>
+                        <span class="text-sm">Manage My Account</span>
+                    </a>
+
+                    <!-- My Order -->
+                    <a href="#" class="flex items-center gap-3 px-4 py-3 text-white hover:bg-white/10 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                        </svg>
+                        <span class="text-sm">My Order</span>
+                    </a>
+
+                    <!-- My Cancellations -->
+                    <a href="#" class="flex items-center gap-3 px-4 py-3 text-white hover:bg-white/10 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+                        <span class="text-sm">My Cancellations</span>
+                    </a>
+
+                    <!-- My Reviews -->
+                    <a href="#" class="flex items-center gap-3 px-4 py-3 text-white hover:bg-white/10 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                        </svg>
+                        <span class="text-sm">My Reviews</span>
+                    </a>
+
+                    <!-- Logout -->
+                    <a href="HomePage.html" class="flex items-center gap-3 px-4 py-3 text-white hover:bg-white/10 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15" />
+                        </svg>
+                        <span class="text-sm">Logout</span>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="Content2 flex justify-around ">
+        <div class="left pt-10 pl-20 border-r border-gray-300 w-1/4 flex flex-col space-y-2">
+            <div class="nu flex items-center cursor-pointer hover:text-blue-500 gap-27">
+                <span>Woman’s Fashion</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"d="M9 5l7 7-7 7"/>
+                </svg>
+            </div>
+             <div class="nam flex items-center cursor-pointer hover:text-blue-500 gap-32.5">
+                <span>Men’s Fashion</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"d="M9 5l7 7-7 7" />
+                </svg>
+            </div>
+            <div class="cursor-pointer hover:text-blue-500">Electronics</div>
+            <div class="cursor-pointer hover:text-blue-500">Home & Lifestyle</div>
+            <div class="cursor-pointer hover:text-blue-500">Medicine</div>
+            <div class="cursor-pointer hover:text-blue-500">Sports & Outdoor</div>
+            <div class="cursor-pointer hover:text-blue-500">Baby’s & Toys</div>
+            <div class="cursor-pointer hover:text-blue-500">Groceries & Pets</div>
+            <div class="cursor-pointer hover:text-blue-500">Health & Beauty</div>
+        </div>
+         <div class="right w-3/5 pt-10">
+            <div class="relative bg-black overflow-hidden">
+                <div class="relative p-10 text-white justify-center">
+                    <div class="flex items-center gap-2 mb-4">
+                        <img src="/img/1200px-Apple_gray_logo 1.png" alt="Apple Logo" class="w-8 h-8">
+                        <span class="text-sm">iPhone 14 Series</span>
+                    </div>
+                    <h2 class="text-5xl font-bold mb-8">Up to 10%<br>off Voucher</h2>
+                    <a href="#" class="flex items-center text-sm hover:opacity-80 transition-opacity">
+                        <span class="underline underline-offset-4">Shop Now</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                        </svg>
+                    </a>	
+                </div>
+                <img src="/img/hero_endframe__cvklg0xk3w6e_large 2.png" alt="iPhone 14 Banner" class="absolute right-0 top-0 h-full w-auto object-contain z-0 opacity-90">
+            <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+            </div>
+            </div>
+        </div>
+        </div>   
+    </div>
+    <div class="containt3 ">
+        <div class="Today left pt-20 pl-32 flex space-x-2">
+            <div class="w-2 h-6 bg-red-600 rounded-full"></div>
+             <span class="text-red-600 font-medium">Today's</span>
+        </div>
+        <div class="FlashSale left pt-10 flex items-center pl-32 pr-22 w-full">
+            <h2 class="text-4xl font-bold">Flash Sales</h2>
+             <div class="flex items-center space-x-4 ml-auto">
+
+            <!-- Days -->
+            <div class="text-center pl-30">
+                <p class="text-xs text-gray-500 font-medium">Days</p>
+                <p class="text-xl font-bold">03</p>
+            </div>
+            <span class="text-red-400 text-2xl font-bold">:</span>
+
+            <!-- Hours -->
+            <div class="text-center">
+                <p class="text-xs text-gray-500 font-medium">Hours</p>
+                <p class="text-xl font-bold">23</p>
+            </div>
+            <span class="text-red-400 text-2xl font-bold">:</span>
+
+            <!-- Minutes -->
+            <div class="text-center">
+                <p class="text-xs text-gray-500 font-medium">Minutes</p>
+                <p class="text-xl font-bold">19</p>
+            </div>
+            <span class="text-red-400 text-2xl font-bold">:</span>
+
+            <!-- Seconds -->
+            <div class="text-center">
+                <p class="text-xs text-gray-500 font-medium">Seconds</p>
+                <p class="text-xl font-bold">56</p>
+            </div>
+        </div>
+            <div class="flex items-center space-x-3 pl-110">
+            <button class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200">
+                ←
+            </button>
+            <button class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200">
+                →
+            </button>
+        </div>
+    </div>
+        <div class="grid grid-cols-4 gap-6 left pt-5 pl-32 flex space-x-2 ">
+            <div class="border rounded-lg p-4 relative group bg-white shadow-sm transition-transform duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg">
+                <div class="Giamgia absolute mt-2 bg-red-500 text-white text-xs px-2 py-1 rounded-md">-40%</div>
+                <div class="absolute top-2 right-2 space-y-2 flex flex-col">
+                    <button class="w-8 h-8 bg-white rounded-full shadow">♥</button>
+                    <button class="w-8 h-8 bg-white rounded-full shadow">👁</button>
+                </div>
+                <img src="/img/g92-2-500x500 1.png" class="w-full h-40 object-contain mt-4 transition-transform duration-300 transform group-hover:scale-105"/>
+                <button class="Add w-full bg-gradient-to-r from-black to-gray-800 text-white py-2 mt-3 hidden group-hover:flex transition transform duration-150 hover:-translate-y-1 active:scale-95 shadow-md hover:shadow-lg justify-center items-center gap-2 rounded-md">
+                    Add to Cart
+                </button>
+                <p class="mt-3 font-semibold text-sm">HAVIT HV-G92 Gamepad</p>
+                <div class="flex items-center space-x-2">
+                    <span class="text-red-500 font-semibold">$120</span>
+                    <span class="line-through text-gray-400">$160</span>
+                </div>
+                <div class="flex items-center text-yellow-400 text-sm">
+                    ★★★★★ <span class="ml-1 text-gray-500">(88)</span>
+                </div>
+            </div>
+            <div class="border rounded-lg p-4 relative group bg-white shadow-sm transition-transform duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg">
+                <div class="Giamgia absolute mt-2 bg-red-500 text-white text-xs px-2 py-1 rounded-md">-35%</div>
+                <div class="absolute top-2 right-2 space-y-2 flex flex-col">
+                    <button class="w-8 h-8 bg-white rounded-full shadow">♥</button>
+                    <button class="w-8 h-8 bg-white rounded-full shadow">👁</button>
+                </div>
+                <img src="/img/ak-900-01-500x500 1.png" class="w-full h-40 object-contain mt-4 transition-transform duration-300 transform group-hover:scale-105"/>
+                <button class="Add w-full bg-gradient-to-r from-black to-gray-800 text-white py-2 mt-3 hidden group-hover:flex transition transform duration-150 hover:-translate-y-1 active:scale-95 shadow-md hover:shadow-lg justify-center items-center gap-2 rounded-md">
+                    Add to Cart
+                </button>
+                <p class="mt-3 font-semibold text-sm">AK-900 Wired Keyboard</p>
+                <div class="flex items-center space-x-2">
+                    <span class="text-red-500 font-semibold">$960</span>
+                    <span class="line-through text-gray-400">$1160</span>
+                </div>
+                <div class="flex items-center text-yellow-400 text-sm">
+                    ★★★★ <span class="text-gray-500">★</span> <span class="ml-1 text-gray-500">(75)</span>
+                </div>
+            </div>
+             <div class="border rounded-lg p-4 relative group bg-white shadow-sm transition-transform duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg">
+                <div class="Giamgia absolute mt-2 bg-red-500 text-white text-xs px-2 py-1 rounded-md">-30%</div>
+                <div class="absolute top-2 right-2 space-y-2 flex flex-col">
+                    <button class="w-8 h-8 bg-white rounded-full shadow">♥</button>
+                    <button class="w-8 h-8 bg-white rounded-full shadow">👁</button>
+                </div>
+                <img src="/img/Frame 613.png" class="w-full h-40 object-contain mt-4 transition-transform duration-300 transform group-hover:scale-105"/>
+                <button class="Add w-full bg-gradient-to-r from-black to-gray-800 text-white py-2 mt-3 hidden group-hover:flex transition transform duration-150 hover:-translate-y-1 active:scale-95 shadow-md hover:shadow-lg justify-center items-center gap-2 rounded-md">
+                    Add to Cart
+                </button>
+                <p class="mt-3 font-semibold text-sm">IPS LCD Gaming Monitor</p>
+                <div class="flex items-center space-x-2">
+                    <span class="text-red-500 font-semibold">$370</span>
+                    <span class="line-through text-gray-400">$400</span>
+                </div>
+                <div class="flex items-center text-yellow-400 text-sm">
+                    ★★★★★</span> <span class="ml-1 text-gray-500">(99)</span>
+                </div>
+            </div>
+            <div class="border rounded-lg p-4 relative group bg-white shadow-sm transition-transform duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg">
+                <div class="Giamgia absolute mt-2 bg-red-500 text-white text-xs px-2 py-1 rounded-md">-25%</div>
+                <div class="absolute top-2 right-2 space-y-2 flex flex-col">
+                    <button class="w-8 h-8 bg-white rounded-full shadow">♥</button>
+                    <button class="w-8 h-8 bg-white rounded-full shadow">👁</button>
+                </div>
+                <img src="/img/sam-moghadam-khamseh-kvmdsTrGOBM-unsplash 1.png" class="w-full h-40 object-contain mt-4 transition-transform duration-300 transform group-hover:scale-105"/>
+                <button class="Add w-full bg-gradient-to-r from-black to-gray-800 text-white py-2 mt-3 hidden group-hover:flex transition transform duration-150 hover:-translate-y-1 active:scale-95 shadow-md hover:shadow-lg justify-center items-center gap-2 rounded-md">
+                    Add to Cart
+                </button>
+                <p class="mt-3 font-semibold text-sm">S-Series Comfort Chair</p>
+                <div class="flex items-center space-x-2">
+                    <span class="text-red-500 font-semibold">$375</span>
+                    <span class="line-through text-gray-400">$400</span>
+                </div>
+                <div class="flex items-center text-yellow-400 text-sm">
+                    ★★★★
+                    <span class="text-yellow-400">☆</span>
+                    <span class="ml-2 text-gray-500 text-xs">(99)</span>
+                </div>
+            </div>
+        </div>
+        <div class="view text-center mt-10 mb-20 bg-red-600 w-40 mx-auto py-2 rounded-md text-white cursor-pointer hover:opacity-80 transition-opacity px-4">
+            View All Products
+        </div>
+    </div>
+    </div>
+    <div class="containt4" >
+        <div class="max-w-screen-xl mx-auto">
+            <div class="border-t border-b border-gray-300 mx-4">
+                <div class="Catalories left pt-6 pl-20 flex items-center space-x-2">
+                    <div class="w-2 h-6 bg-red-600 rounded-full"></div>
+                    <div class="flex">
+                        <span class="text-red-600 font-medium">Catalories</span>
+                        <div class="flex items-center space-x-3 pl-240">
+                            <button class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200">
+                                ←
+                            </button>
+                            <button class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200">
+                                →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-2 overflow-x-auto py-4 pl-10 gap-16 pl-19">
+                    <div class="border rounded-lg p-6 w-32 h-32 flex flex-col items-center justify-center space-y-2 cursor-pointer hover:bg-red-500 hover:text-white hover:border-red-500 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                        </svg>
+                        <p class="text-sm font-medium">Phones</p>
+                    </div>
+                     <div class="border rounded-lg p-6 w-32 h-32 flex flex-col items-center justify-center space-y-2 cursor-pointer hover:bg-red-500 hover:text-white hover:border-red-500 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 20.25h12m-7.5-3v3m3-3v3m-10.125-3h17.25c.621 0 1.125-.504 1.125-1.125V4.875c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125Z" />
+                        </svg>
+                        <p class="text-sm font-medium">Computers</p>
+                    </div>
+                     <div class="border rounded-lg p-6 w-32 h-32 flex flex-col items-center justify-center space-y-2 cursor-pointer hover:bg-red-500 hover:text-white hover:border-red-500 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+                        <p class="text-sm font-medium">SmartWatch</p>
+                    </div>
+                     <div class="border rounded-lg p-6 w-32 h-32 flex flex-col items-center justify-center space-y-2 cursor-pointer hover:bg-red-500 hover:text-white hover:border-red-500 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z" />
+                        </svg>
+                        <p class="text-sm font-medium">Camera</p>
+                    </div>
+                     <div class="border rounded-lg p-6 w-32 h-32 flex flex-col items-center justify-center space-y-2 cursor-pointer hover:bg-red-500 hover:text-white hover:border-red-500 transition">
+                       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32" xml:space="preserve"><style></style>
+                            <path d="M9.467 29.134H5.078A4.082 4.082 0 0 1 1 25.056V17.91a4.082 4.082 0 0 1 4.078-4.078h4.389a1 1 0 0 1 1 1v13.3a1 1 0 0 1-1 1zM5.078 15.833A2.081 2.081 0 0 0 3 17.911v7.145c0 1.145.933 2.078 2.078 2.078h3.389V15.833H5.078zM26.922 29.134h-4.389a1 1 0 0 1-1-1V14.833a1 1 0 0 1 1-1h4.389A4.082 4.082 0 0 1 31 17.911v7.145a4.082 4.082 0 0 1-4.078 4.078zm-3.389-2h3.389A2.081 2.081 0 0 0 29 25.056V17.91a2.081 2.081 0 0 0-2.078-2.078h-3.389v11.3z"/>
+                            <path d="M9.467 29.134H5.078A4.082 4.082 0 0 1 1 25.056V17.91a4.082 4.082 0 0 1 4.078-4.078h4.389a1 1 0 0 1 1 1v13.3a1 1 0 0 1-1 1zM5.078 15.833A2.081 2.081 0 0 0 3 17.911v7.145c0 1.145.933 2.078 2.078 2.078h3.389V15.833H5.078zM26.922 29.134h-4.389a1 1 0 0 1-1-1V14.833a1 1 0 0 1 1-1h4.389A4.082 4.082 0 0 1 31 17.911v7.145a4.082 4.082 0 0 1-4.078 4.078zm-3.389-2h3.389A2.081 2.081 0 0 0 29 25.056V17.91a2.081 2.081 0 0 0-2.078-2.078h-3.389v11.3z"/>
+                            <path d="M28.074 14.833C27.484 8.688 22.296 3.867 16 3.867S4.515 8.688 3.926 14.833H7.69C8.26 10.753 11.765 7.6 16 7.6s7.738 3.153 8.31 7.233h3.764z"/>
+                        </svg>
+                        <p class="text-sm font-medium">HeadPhones</p>
+                    </div>
+                     <div class="border rounded-lg p-6 w-32 h-32 flex flex-col items-center justify-center space-y-2 cursor-pointer hover:bg-red-500 hover:text-white hover:border-red-500 transition">
+                        <img src="/img/Category-Gamepad.png" alt="">
+                        <p class="text-sm font-medium">Gaming</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="containt5">
+        <div class="max-w-screen-xl mx-auto px-6 ">
+            <div class="Month pt-20 flex items-center gap-2 pl-15">
+                <div class="w-2 h-6 bg-red-600 rounded-full"></div>
+                <span class="text-red-600 font-medium">This Month</span>
+            </div>
+
+            <div class="mt-4 flex items-center justify-between">
+                <h2 class="text-4xl font-bold pl-15">Best Selling Products</h2>
+                <div class="view bg-red-600 text-white px-4 py-2 rounded-md cursor-pointer hover:opacity-90 transition-opacity">
+                    View All
+                </div>
+            </div>
+
+            <div class="grid grid-cols-4 gap-6 mt-5 pl-17">
+                <div class="border rounded-lg p-4 relative group bg-white shadow-sm transition-transform duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg">
+                <div class="absolute top-2 right-2 space-y-2 flex flex-col">
+                    <button class="w-8 h-8 bg-white rounded-full shadow">♥</button>
+                    <button class="w-8 h-8 bg-white rounded-full shadow">👁</button>
+                </div>
+                <img src="/img/Frame 605.png" class="w-full h-40 object-contain mt-4 transition-transform duration-300 transform group-hover:scale-105"/>
+                <button class="Add w-full bg-gradient-to-r from-black to-gray-800 text-white py-2 mt-3 hidden group-hover:flex transition transform duration-150 hover:-translate-y-1 active:scale-95 shadow-md hover:shadow-lg justify-center items-center gap-2 rounded-md">
+                    Add to Cart
+                </button>
+                <p class="mt-3 font-semibold text-sm">The north coat</p>
+                <div class="flex items-center space-x-2">
+                    <span class="text-red-500 font-semibold">$260</span>
+                    <span class="line-through text-gray-400">$360</span>
+                </div>
+                <div class="flex items-center text-yellow-400 text-sm">
+                    ★★★★★ <span class="ml-1 text-gray-500">(65)</span>
+                </div>
+            </div>
+            <div class="border rounded-lg p-4 relative group bg-white shadow-sm transition-transform duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg">
+                <div class="absolute top-2 right-2 space-y-2 flex flex-col">
+                    <button class="w-8 h-8 bg-white rounded-full shadow">♥</button>
+                    <button class="w-8 h-8 bg-white rounded-full shadow">👁</button>
+                </div>
+                <img src="/img/547953_9C2ST_8746_001_082_0000_Light-Gucci-Savoy-medium-duffle-bag 1.png" class="w-full h-40 object-contain mt-4 transition-transform duration-300 transform group-hover:scale-105"/>
+                <button class="Add w-full bg-gradient-to-r from-black to-gray-800 text-white py-2 mt-3 hidden group-hover:flex transition transform duration-150 hover:-translate-y-1 active:scale-95 shadow-md hover:shadow-lg justify-center items-center gap-2 rounded-md">
+                    Add to Cart
+                </button>
+                <p class="mt-3 font-semibold text-sm">Gucci duffle bag</p>
+                <div class="flex items-center space-x-2">
+                    <span class="text-red-500 font-semibold">$960</span>
+                    <span class="line-through text-gray-400">$1160</span>
+                </div>
+                <div class="flex items-center text-yellow-400 text-sm">
+                    ★★★★ 
+                    <span class="text-yellow-500">☆</span> 
+                    <span class="ml-1 text-gray-500">(65)</span>
+                </div>
+            </div>
+             <div class="border rounded-lg p-4 relative group bg-white shadow-sm transition-transform duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg">
+                <div class="absolute top-2 right-2 space-y-2 flex flex-col">
+                    <button class="w-8 h-8 bg-white rounded-full shadow">♥</button>
+                    <button class="w-8 h-8 bg-white rounded-full shadow">👁</button>
+                </div>
+                <img src="/img/Frame 610.png" class="w-full h-40 object-contain mt-4 transition-transform duration-300 transform group-hover:scale-105"/>
+                <button class="Add w-full bg-gradient-to-r from-black to-gray-800 text-white py-2 mt-3 hidden group-hover:flex transition transform duration-150 hover:-translate-y-1 active:scale-95 shadow-md hover:shadow-lg justify-center items-center gap-2 rounded-md">
+                    Add to Cart
+                </button>
+                <p class="mt-3 font-semibold text-sm">RGB liquid CPU Cooler</p>
+                <div class="flex items-center space-x-2">
+                    <span class="text-red-500 font-semibold">$160</span>
+                    <span class="line-through text-gray-400">$170</span>
+                </div>
+                <div class="flex items-center text-yellow-400 text-sm">
+                    ★★★★</span> 
+                    <span class="text-yellow-500">☆</span> 
+                    <span class="ml-1 text-gray-500">(65)</span>
+                </div>
+            </div>
+            <div class="border rounded-lg p-4 relative group bg-white shadow-sm transition-transform duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg">
+                <div class="absolute top-2 right-2 space-y-2 flex flex-col">
+                    <button class="w-8 h-8 bg-white rounded-full shadow">♥</button>
+                    <button class="w-8 h-8 bg-white rounded-full shadow">👁</button>
+                </div>
+                <img src="/img/Frame 612.png" class="w-full h-40 object-contain mt-4 transition-transform duration-300 transform group-hover:scale-105"/>
+                <button class="Add w-full bg-gradient-to-r from-black to-gray-800 text-white py-2 mt-3 hidden group-hover:flex transition transform duration-150 hover:-translate-y-1 active:scale-95 shadow-md hover:shadow-lg justify-center items-center gap-2 rounded-md">
+                    Add to Cart
+                </button>
+                <p class="mt-3 font-semibold text-sm">Small BookSelf</p>
+                <div class="flex items-center space-x-2">
+                    <span class="text-red-500 font-semibold">$360</span>
+                </div>
+                <div class="flex items-center text-yellow-400 text-sm">
+                    ★★★★★
+                    <span class="ml-2 text-gray-500 text-xs">(65)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="containt6 p-10 pl-30">
+        <div class="w-full bg-black text-white p-10 flex items-center justify-between">
+    <div class="space-y-5">
+        <p class="text-green-400 font-medium">Categories</p>
+
+        <h2 class="text-4xl font-bold leading-tight">
+            Enhance Your<br>
+            Music Experience
+        </h2>
+        <div class="flex space-x-4 pt-4">
+            <div class="bg-white text-black w-20 h-20 rounded-full flex flex-col items-center justify-center">
+                <span class="text-xl font-bold">23</span>
+                <span class="text-xs">Hours</span>
+            </div>
+
+            <div class="bg-white text-black w-20 h-20 rounded-full flex flex-col items-center justify-center">
+                <span class="text-xl font-bold">05</span>
+                <span class="text-xs">Days</span>
+            </div>
+
+            <div class="bg-white text-black w-20 h-20 rounded-full flex flex-col items-center justify-center">
+                <span class="text-xl font-bold">59</span>
+                <span class="text-xs">Minutes</span>
+            </div>
+
+            <div class="bg-white text-black w-20 h-20 rounded-full flex flex-col items-center justify-center">
+                <span class="text-xl font-bold">35</span>
+                <span class="text-xs">Seconds</span>
+            </div>
+        </div>
+        <button class="cursor-pointer mt-5 bg-green-500 text-black px-6 py-3 rounded-lg font-medium hover:bg-green-400 transition">
+            Buy Now!
+        </button>
+    </div>
+    <div class="flex-1 flex justify-end items-center">
+            <div class="relative">
+                <!-- Glow effect behind speaker -->
+                <div class="absolute inset-0 bg-gray-700/50 blur-3xl rounded-full"></div>
+                <img src="/img/Frame 694.png" alt="JBL Speaker" class="relative w-[450px] h-auto object-contain" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="containt7">
+      <div class="max-w-screen-xl mx-auto px-6">
+            <div class="Product pt-10 flex items-center gap-2 pl-13">
+                <div class="w-2 h-6 bg-red-600 rounded-full"></div>
+                <span class="text-red-600 font-medium">Our Products</span>
+            </div>
+            <div class="mt-4 flex items-center justify-between pl-13 flex-nowrap">
+                <h2 class="text-4xl font-bold whitespace-nowrap">Explore Our Products</h2>
+                <div class="flex items-center space-x-2 ml-auto">
+                    <button class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200">
+                        ←
+                    </button>
+                    <button class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200">
+                        →
+                    </button>
+                </div>
+            </div>
+            <div class="grid grid-cols-4 gap-6 mt-5 pl-13">
+            <div class="border rounded-lg p-4 relative group bg-white shadow-sm transition-transform duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg">
+                <div class="absolute top-2 right-2 space-y-2 flex flex-col">
+                    <button class="w-8 h-8 bg-white rounded-full shadow">♥</button>
+                    <button class="w-8 h-8 bg-white rounded-full shadow">👁</button>
+                </div>
+                <img src="/img/Frame 604.png" class="w-full h-40 object-contain mt-4 transition-transform duration-300 transform group-hover:scale-105"/>
+                <button class="Add w-full bg-gradient-to-r from-black to-gray-800 text-white py-2 mt-3 hidden group-hover:flex transition transform duration-150 hover:-translate-y-1 active:scale-95 shadow-md hover:shadow-lg justify-center items-center gap-2 rounded-md">
+                    Add to Cart
+                </button>
+                <p class="mt-3 font-semibold text-sm">Breed Dry Dog Food</p>
+                <div class="flex items-center space-x-2">
+                    <span class="text-red-500 font-semibold">$100</span>
+                     <div class="flex items-center text-yellow-400 text-sm">
+                        ★★★★★ <span class="ml-1 text-gray-500">(65)</span>
+                     </div>
+                </div>          
+            </div>
+            <div class="border rounded-lg p-4 relative group bg-white shadow-sm transition-transform duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg">
+                <div class="absolute top-2 right-2 space-y-2 flex flex-col">
+                    <button class="w-8 h-8 bg-white rounded-full shadow">♥</button>
+                    <button class="w-8 h-8 bg-white rounded-full shadow">👁</button>
+                </div>
+                <img src="/img/Frame 604 (1).png" class="w-full h-40 object-contain mt-4 transition-transform duration-300 transform group-hover:scale-105"/>
+                <button class="Add w-full bg-gradient-to-r from-black to-gray-800 text-white py-2 mt-3 hidden group-hover:flex transition transform duration-150 hover:-translate-y-1 active:scale-95 shadow-md hover:shadow-lg justify-center items-center gap-2 rounded-md">
+                    Add to Cart
+                </button>
+                <p class="mt-3 font-semibold text-sm">CANON EOS DSLR Camera</p>
+                <div class="flex items-center space-x-2">
+                    <span class="text-red-500 font-semibold">$360</span>
+                     <div class="flex items-center text-yellow-400 text-sm">
+                        ★★★★ 
+                        <span class="text-gray-500">★</span> 
+                        <span class="ml-1 text-gray-500">(95)</span>
+                    </div>
+                </div>
+            </div>
+             <div class="border rounded-lg p-4 relative group bg-white shadow-sm transition-transform duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg">
+                <div class="absolute top-2 right-2 space-y-2 flex flex-col">
+                    <button class="w-8 h-8 bg-white rounded-full shadow">♥</button>
+                    <button class="w-8 h-8 bg-white rounded-full shadow">👁</button>
+                </div>
+                <img src="/img/Frame 604 (2).png" class="w-full h-40 object-contain mt-4 transition-transform duration-300 transform group-hover:scale-105"/>
+                <button class="Add w-full bg-gradient-to-r from-black to-gray-800 text-white py-2 mt-3 hidden group-hover:flex transition transform duration-150 hover:-translate-y-1 active:scale-95 shadow-md hover:shadow-lg justify-center items-center gap-2 rounded-md">
+                    Add to Cart
+                </button>
+                <p class="mt-3 font-semibold text-sm">ASUS FHD Gaming Laptop</p>
+                <div class="flex items-center space-x-2">
+                    <span class="text-red-500 font-semibold">$700</span>
+                     <div class="flex items-center text-yellow-400 text-sm">
+                        ★★★★★</span> 
+                        <span class="ml-1 text-gray-500">(325)</span>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="border rounded-lg p-4 relative group bg-white shadow-sm transition-transform duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg">
+                <div class="absolute top-2 right-2 space-y-2 flex flex-col">
+                    <button class="w-8 h-8 bg-white rounded-full shadow">♥</button>
+                    <button class="w-8 h-8 bg-white rounded-full shadow">👁</button>
+                </div>
+                <img src="/img/curology-j7pKVQrTUsM-unsplash 1.png" class="w-full h-40 object-contain mt-4 transition-transform duration-300 transform group-hover:scale-105"/>
+                <button class="Add w-full bg-gradient-to-r from-black to-gray-800 text-white py-2 mt-3 hidden group-hover:flex transition transform duration-150 hover:-translate-y-1 active:scale-95 shadow-md hover:shadow-lg justify-center items-center gap-2 rounded-md">
+                    Add to Cart
+                </button>
+                <p class="mt-3 font-semibold text-sm">Curology Product Set</p>
+                <div class="flex items-center space-x-2">
+                    <span class="text-red-500 font-semibold">$500</span>
+                    <div class="flex items-center text-yellow-400 text-sm">
+                        ★★★★★
+                        <span class="ml-2 text-gray-500 text-xs">(145)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-4 gap-6 mt-5 pl-13">
+            <div class="border rounded-lg p-4 relative group bg-white shadow-sm transition-transform duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg">
+                <div class="absolute top-2 right-2 space-y-2 flex flex-col">
+                    <button class="w-8 h-8 bg-white rounded-full shadow">♥</button>
+                    <button class="w-8 h-8 bg-white rounded-full shadow">👁</button>
+                </div>
+                <img src="/img/New-Mercedes-Benz-Gtr-Licensed-Ride-on-Car-Kids-Electric-Toy-Car 1.png" class="w-full h-40 object-contain mt-4 transition-transform duration-300 transform group-hover:scale-105"/>
+                <button class="Add w-full bg-gradient-to-r from-black to-gray-800 text-white py-2 mt-3 hidden group-hover:flex transition transform duration-150 hover:-translate-y-1 active:scale-95 shadow-md hover:shadow-lg justify-center items-center gap-2 rounded-md">
+                    Add to Cart
+                </button>
+                <p class="mt-3 font-semibold text-sm">Kids Electric Car</p>
+                <div class="flex items-center space-x-2">
+                    <span class="text-red-500 font-semibold">$960</span>
+                    <div class="flex items-center text-yellow-400 text-sm">
+                        ★★★★★ <span class="ml-1 text-gray-500">(65)</span>
+                    </div>
+                </div>
+               <div class="flex gap-2">
+                    <button class="w-5 h-5 rounded-full bg-red-500 border-2 border-black"></button>
+                    <button class="w-5 h-5 rounded-full bg-red-700 "></button>
+                </div>
+            </div>
+            <div class="border rounded-lg p-4 relative group bg-white shadow-sm transition-transform duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg">
+                <div class="absolute top-2 right-2 space-y-2 flex flex-col">
+                    <button class="w-8 h-8 bg-white rounded-full shadow">♥</button>
+                    <button class="w-8 h-8 bg-white rounded-full shadow">👁</button>
+                </div>
+                <img src="/img/Frame 608.png" class="w-full h-40 object-contain mt-4 transition-transform duration-300 transform group-hover:scale-105"/>
+                <button class="Add w-full bg-gradient-to-r from-black to-gray-800 text-white py-2 mt-3 hidden group-hover:flex transition transform duration-150 hover:-translate-y-1 active:scale-95 shadow-md hover:shadow-lg justify-center items-center gap-2 rounded-md">
+                    Add to Cart
+                </button>
+                <p class="mt-3 font-semibold text-sm">Jr. Zoom Soccer Cleats</p>
+                <div class="flex items-center space-x-2">
+                    <span class="text-red-500 font-semibold">$1160</span>
+                     <div class="flex items-center text-yellow-400 text-sm">
+                        ★★★★★ <span class="ml-1 text-gray-500">(35)</span>
+                    </div>
+                </div>
+                  <div class="flex gap-2">
+                    <button class="w-5 h-5 rounded-full bg-yellow-300 border-2 border-black"></button>
+                    <button class="w-5 h-5 rounded-full bg-red-700"></button>
+                </div>
+            </div>
+             <div class="border rounded-lg p-4 relative group bg-white shadow-sm transition-transform duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg">
+                <div class="absolute top-2 right-2 space-y-2 flex flex-col">
+                    <button class="w-8 h-8 bg-white rounded-full shadow">♥</button>
+                    <button class="w-8 h-8 bg-white rounded-full shadow">👁</button>
+                </div>
+                <img src="/img/GP11_PRD3 1.png" class="w-full h-40 object-contain mt-4 transition-transform duration-300 transform group-hover:scale-105"/>
+                <button class="Add w-full bg-gradient-to-r from-black to-gray-800 text-white py-2 mt-3 hidden group-hover:flex transition transform duration-150 hover:-translate-y-1 active:scale-95 shadow-md hover:shadow-lg justify-center items-center gap-2 rounded-md">
+                    Add to Cart
+                </button>
+                <p class="mt-3 font-semibold text-sm">RGB liquid CPU Cooler</p>
+                <div class="flex items-center space-x-2">
+                    <span class="text-red-500 font-semibold">$660</span>
+                     <div class="flex items-center text-yellow-400 text-sm">
+                    ★★★★</span> 
+                    <span class="text-yellow-500">☆</span> 
+                    <span class="ml-1 text-gray-500">(65)</span>
+                </div>
+                </div>
+                 <div class="flex gap-2">
+                    <button class="w-5 h-5 rounded-full bg-black border-2 border-black"></button>
+                    <button class="w-5 h-5 rounded-full bg-red-500"></button>
+                </div>
+            </div>
+            <div class="border rounded-lg p-4 relative group bg-white shadow-sm transition-transform duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg">
+                <div class="absolute top-2 right-2 space-y-2 flex flex-col">
+                    <button class="w-8 h-8 bg-white rounded-full shadow">♥</button>
+                    <button class="w-8 h-8 bg-white rounded-full shadow">👁</button>
+                </div>
+                <img src="/img/698717_Z8A1X_3475_001_100_0000_Light-Reversible-quilted-satin-jacket 1.png" class="w-full h-40 object-contain mt-4 transition-transform duration-300 transform group-hover:scale-105"/>
+                <button class="Add w-full bg-gradient-to-r from-black to-gray-800 text-white py-2 mt-3 hidden group-hover:flex transition transform duration-150 hover:-translate-y-1 active:scale-95 shadow-md hover:shadow-lg justify-center items-center gap-2 rounded-md">
+                    Add to Cart
+                </button>
+                <p class="mt-3 font-semibold text-sm">Quilted Satin Jacket</p>
+                <div class="flex items-center space-x-2">
+                    <span class="text-red-500 font-semibold">$660</span>
+                     <div class="flex items-center text-yellow-400 text-sm">
+                    ★★★★</span> 
+                    <span class="text-yellow-500">☆</span> 
+                    <span class="ml-1 text-gray-500">(65)</span>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="view text-center mt-10 mb-20 bg-red-600 w-40 mx-auto py-2 rounded-md text-white cursor-pointer hover:opacity-80 transition-opacity px-4">
+            View All Products
+        </div>
+</div>
+<div class="containt8">
+    <div class="max-w-screen-xl mx-auto px-6">
+            <div class="Feature flex items-center gap-2 pl-13">
+                <div class="w-2 h-6 bg-red-600 rounded-full"></div>
+                <span class="text-red-600 font-medium">Feature</span>
+            </div>
+            <div class="mt-4 flex items-center justify-between pl-13 flex-nowrap">
+                <h2 class="text-4xl font-bold whitespace-nowrap">New Arrival</h2>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 p-10 pl-13">
+            <div class="relative bg-black rounded overflow-hidden row-span-2 ">
+                <img src="/img/ps5-slim-goedkope-playstation_large 1.png" 
+                     alt="PlayStation 5" 
+                     class="w-full h-full object-cover opacity-80">
+                <div class="absolute bottom-8 left-8 text-white">
+                    <h2 class="text-3xl font-bold mb-2">PlayStation 5</h2>
+                    <p class="text-gray-300 text-sm mb-4 max-w-xs">Black and White version of the PS5<br>coming out on sale.</p>
+                    <a href="#" class="text-white font-semibold underline hover:text-gray-300 transition">Shop Now</a>
+                </div>
+            </div>
+             <div class="relative bg-black rounded overflow-hidden">
+                <img src="/img/attractive-woman-wearing-hat-posing-black-background 1.png" 
+                     alt="Women's Collections" 
+                     class="w-full h-full object-cover opacity-70">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
+                <div class="absolute top-70 left-8 -translate-y-1/2 text-white max-w-xs">
+                    <h2 class="text-2xl font-bold mb-2">Women's Collections</h2>
+                    <p class="text-gray-200 text-sm mb-4">Featured woman collections that<br>give you another vibe.</p>
+                    <a href="#" class="text-white font-semibold underline hover:text-gray-300 transition">Shop Now</a>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-6">                
+                <div class="relative bg-black rounded overflow-hidden">
+                    <img src="/img/69-694768_amazon-echo-png-clipart-transparent-amazon-echo-png 1.png" 
+                         alt="Speakers" 
+                         class="w-full h-full opacity-70">
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <h3 class="text-xl font-bold mb-1">Speakers</h3>
+                        <p class="text-gray-200 text-xs mb-3">Amazon wireless speakers</p>
+                        <a href="#" class="text-white text-sm font-semibold underline hover:text-gray-300 transition">Shop Now</a>
+                    </div>
+                </div>
+                <div class="relative bg-black rounded overflow-hidden">
+                    <img src="/img/652e82cd70aa6522dd785109a455904c.png" 
+                         alt="Perfume" 
+                         class="w-full h-full object-cover opacity-70">
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <h3 class="text-xl font-bold mb-1">Perfume</h3>
+                        <p class="text-gray-200 text-xs mb-3">GUCCI INTENSE OUD EDP</p>
+                        <a href="#" class="text-white text-sm font-semibold underline hover:text-gray-300 transition">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>     
+</div>
+<div class="containt9 flex">
+    <div class="flex justify-center items-center gap-10 max-w-screen-xl mx-auto px-6 py-10">
+        <div class="Delivery p-10 text-center">
+            <div class="w-20 h-20 bg-gray-400 rounded-full flex items-center justify-center mb-4">
+                    <div class="w-16 h-16 bg-black rounded-full flex items-center justify-center">
+                        <i class="fas fa-truck text-white text-2xl"></i>
+                         <img src="/img/icon-delivery.png" alt="">
+                    </div>
+                </div>
+            <h3 class="font-bold text-lg mb-2">FREE AND FAST DELIVERY</h3>
+                <p class="text-sm text-gray-600">Free delivery for all orders over $140</p>
+        </div>
+         <div class="Delivery p-10 text-center">
+            <div class="w-20 h-20 bg-gray-400 rounded-full flex items-center justify-center mb-4">
+                    <div class="w-16 h-16 bg-black rounded-full flex items-center justify-center">
+                        <i class="fas fa-truck text-white text-2xl"></i>
+                         <img src="/img/Icon-Customer service.png" alt="">
+                    </div>
+                </div>
+             <h3 class="font-bold text-lg mb-2">24/7 CUSTOMER SERVICE</h3>
+                <p class="text-sm text-gray-600">Friendly 24/7 customer support</p>
+        </div>
+         <div class="Delivery p-10 text-center">
+            <div class="w-20 h-20 bg-gray-400 rounded-full flex items-center justify-center mb-4">
+                    <div class="w-16 h-16 bg-black rounded-full flex items-center justify-center">
+                        <i class="fas fa-truck text-white text-2xl"></i>
+                         <img src="/img/Icon-secure.png" alt="">
+                    </div>
+                </div>
+            <h3 class="font-bold text-lg mb-2">MONEY BACK GUARANTEE</h3>
+                <p class="text-sm text-gray-600">We return money within 30 days</p>
+        </div>
+    </div>
+</div>
+<div class="flex justify-end mt-7">
+            <button class="w-12 h-12 bg-gray-200 hover:bg-gray-300 rounded-full flex items-center justify-center transition-colors">
+               <img src="/img/icons_arrow-up.png" alt="">
+            </button>
+</div>
+<div class="footer bg-black text-white mt-12">
+    <div class="max-w-screen-xl mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-8"> 
+            <div>
+                <h4 class="font-bold text-lg mb-3">Exclusive</h4>
+                <p class="text-sm text-gray-300 mb-4">Subscribe</p>
+                <p class="text-sm text-gray-400 mb-4">Get 10% off your first order</p>
+                <div class="relative w-full max-w-xs">
+                    <label for="footer-email" class="sr-only">Email</label>
+                    <div
+                        class="flex items-center bg-transparent border border-white  px-3 py-2 space-x-2"
+                        role="group"
+                    >
+                        <input
+                            id="footer-email"
+                            type="email"
+                            placeholder="Enter your email"
+                            class="bg-transparent text-white placeholder-gray-400 text-sm flex-1 h-8 focus:outline-none"
+                            aria-label="Email address"
+                        />
+                        <button
+                            type="button"
+                            aria-label="Subscribe"
+                            class="flex items-center justify-center w-9 h-9 bg-white/6 hover:bg-white/10 rounded-full transition"
+                        >
+                            <img src="/img/icon-send.png" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-3">Support</h4>
+                <p class="text-sm text-gray-400">111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.</p>
+                <p class="text-sm text-gray-400 mt-2">exclusive@gmail.com</p>
+                <p class="text-sm text-gray-400 mt-2">+88015-88888-9999</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-3">Account</h4>
+                <ul class="text-sm text-gray-400 space-y-2">
+                    <li><a href="#" class="hover:text-white">My Account</a></li>
+                    <li><a href="#" class="hover:text-white">Login / Register</a></li>
+                    <li><a href="#" class="hover:text-white">Cart</a></li>
+                    <li><a href="#" class="hover:text-white">Wishlist</a></li>
+                    <li><a href="#" class="hover:text-white">Shop</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-3">Quick Link</h4>
+                <ul class="text-sm text-gray-400 space-y-2">
+                    <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-white">Terms Of Use</a></li>
+                    <li><a href="#" class="hover:text-white">FAQ</a></li>
+                    <li><a href="#" class="hover:text-white">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-3">Download App</h4>
+                <p class="text-sm text-gray-400 mb-3">Save $3 with App New User Only</p>
+                <div class="flex items-start gap-4 mb-4">
+                    <img src="/img/qr-placeholder.png" alt="QR" class="w-20 h-20 object-cover bg-gray-800 rounded"/>
+                    <div class="flex flex-col gap-2">
+                        <img src="/img/png-transparent-google-play-store-logo-google-play-app-store-android-wallets-text-label-logo.png" alt="Google Play" class="w-28 h-auto object-contain"/>
+                        <img src="/img/download-appstore.png" alt="App Store" class="w-28 h-auto object-contain" />
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 mt-2">
+                    <a href="#" class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.877v-6.987H7.898v-2.89h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.462h-1.26c-1.242 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.987C18.343 21.128 22 16.991 22 12z"/></svg>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full  flex items-center justify-center hover:bg-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M22.162 5.656c-.793.352-1.645.59-2.538.697a4.48 4.48 0 0 0 1.965-2.472 8.933 8.933 0 0 1-2.827 1.082 4.468 4.468 0 0 0-7.61 4.072A12.678 12.678 0 0 1 3.15 4.897a4.468 4.468 0 0 0 1.382 5.959 4.44 4.44 0 0 1-2.024-.56v.057a4.468 4.468 0 0 0 3.583 4.377c-.566.154-1.163.188-1.762.07a4.47 4.47 0 0 0 4.174 3.101A8.958 8.958 0 0 1 2 19.54a12.647 12.647 0 0 0 6.857 2.01c8.228 0 12.737-6.816 12.737-12.737 0-.194-.004-.387-.013-.579a9.053 9.053 0 0 0 2.219-2.314z"/></svg>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full  flex items-center justify-center hover:bg-gray-700">
+                        <img src="/img/icon-instagram.png" alt="">
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full  flex items-center justify-center hover:bg-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.026-3.036-1.849-3.036-1.849 0-2.131 1.445-2.131 2.938v5.667H9.359V9h3.414v1.561h.049c.476-.9 1.637-1.849 3.37-1.849 3.603 0 4.267 2.372 4.267 5.459v6.281zM5.337 7.433c-1.144 0-2.069-.927-2.069-2.069 0-1.143.925-2.069 2.069-2.069 1.143 0 2.069.926 2.069 2.069 0 1.142-.926 2.069-2.069 2.069zM6.997 20.452H3.678V9h3.319v11.452z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 border-t border-gray-800 pt-6 text-center text-sm text-gray-400">© Copyright Rimel 2022. All right reserved</div>
+    </div>
+</div>
+</body>
+</html>

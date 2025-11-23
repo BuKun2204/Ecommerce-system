@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+     <script src="/js/accounts.js"></script>
+     <script src="/js/SignUp&SignIn.js"></script>
+</head>
+<body>
+    <div class="Header bg-black">
+            <div class="w-full flex items-center justify-between px-4 py-3">
+                 <div class="flex-1 text-center text-white">
+                <p class="m-0 transition-transform duration-500 ease-in-out hover:scale-105">
+                    Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
+                    <a href="#" class="underline ">Shop now</a>
+                </p>
+            </div>
+                <div class="NgonNgu relative inline-block">
+                    <select name="language" id="language" class="appearance-none bg-black text-white p-2 rounded-none pr-8 focus:outline-none cursor-pointer">
+                        <option value="en">English</option>
+                        <option value="es">Spanish</option>
+                        <option value="fr">French</option>
+                        <option value="de">German</option>
+                        <option value="zh">Chinese</option>
+                    </select>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-white absolute right-2 top-1/2 transform -translate-y-1/2 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="Content1 flex justify-around items-center p-4 border-b border-gray-300">
+            <a href="HomePage.html"><p class="text-xl font-bold">Exclusive</p></a>
+            <div class="ChucNang flex items-center">
+                <a href="HomePage.html" class="px-2">Home</a>
+                <a href="#" class="px-2">Contact</a>
+                <a href="#" class="px-2">About us</a>
+                <a href="SignUp.html" class="px-2 underline-offset-4 underline">Sign up</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                <input type="text" placeholder="What are you looking for?" class="bg-gray-100 rounded-md pl-2 pr-8 py-2 text-sm focus:outline-none"/>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-500 absolute right-2 top-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1010.5 18a7.5 7.5 0 006.15-3.35z" />
+                </svg>
+            </div>
+        </div>
+    </div>
+        <div class="containt1 border-t border-gray-300 p-6 md:p-8"></div>
+        <div class="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10 px-4 md:px-0 max-w-6xl mx-auto">
+         <img src="/img/dl.beatsnoop 1.png" alt="" class="w-full md:w-1/2 lg:w-2/5 h-auto object-cover rounded-lg shadow-md"/>
+         <div class="ml-0 md:ml-8 flex-1 w-full max-w-md px-0 md:pl-10">
+             <div class="bg-white p-6 md:p-10 rounded-xl shadow-lg">
+            <h1 class="text-2xl font-semibold mb-1">Create an account</h1>
+            <p class="text-sm text-gray-500 mb-6">Enter your details below</p>
+
+            <form action="SignIn.html" method="GET" class="space-y-4">
+                <div>
+                <label for="name" class="sr-only">Name</label>
+              <input id="name" name="name" type="text" placeholder="Name" required
+                  class="w-full border border-gray-200 bg-gray-50 py-2 px-3 rounded-md placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-200"/>
+              <p id="nameError" class="text-red-500 text-xs mt-1 hidden">Tên phải có ít nhất 2 ký tự</p>
+                </div>
+
+                <div>
+                <label for="email" class="sr-only">Email or Phone Number</label>
+              <input id="email" name="email" type="email" placeholder="Email" required
+                  class="w-full border border-gray-200 bg-gray-50 py-2 px-3 rounded-md placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-200"/>
+              <p id="emailError" class="text-red-500 text-xs mt-1 hidden">Email không hợp lệ</p>
+                </div>
+
+                <div>
+                <label for="password" class="sr-only">Password</label>
+              <input id="password" name="password" type="password" placeholder="Password" required
+                  class="w-full border border-gray-200 bg-gray-50 py-2 px-3 rounded-md placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-200"/>
+              <p id="passwordError" class="text-red-500 text-xs mt-1 hidden">Mật khẩu phải có ít nhất 6 ký tự</p>
+                </div>
+
+              <button type="submit" class="w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white py-2 rounded-md transition duration-200 shadow-sm">
+              Create Account
+              </button>
+
+                <div class="flex items-center my-2">
+                <div class="flex-grow h-px bg-gray-200"></div>
+                <span class="mx-3 text-sm text-gray-400">or</span>
+                <div class="flex-grow h-px bg-gray-200"></div>
+                </div>
+
+              <button type="button" class="w-full border border-gray-300 rounded-md py-2 flex items-center justify-center gap-3 hover:shadow-sm bg-white">
+                <!-- Google logo -->
+                <svg class="w-5 h-5" viewBox="0 0 533.5 544.3" xmlns="http://www.w3.org/2000/svg" focusable="false">
+                    <path d="M533.5 278.4c0-18.7-1.5-37.3-4.6-55.2H272v104.6h147.1c-6.4 34.6-26 63.9-55.6 83.5v69.4h89.8c52.6-48.4 81.2-119.9 81.2-202.3z" fill="#4285F4"/>
+                    <path d="M272 544.3c73.8 0 135.8-24.4 181-66.1l-89.8-69.4c-24.9 16.8-57 26.7-91.2 26.7-70 0-129.4-47.2-150.6-110.6H31.4v69.6C76.4 477.9 167.2 544.3 272 544.3z" fill="#34A853"/>
+                    <path d="M121.4 323.9c-8.8-26.1-8.8-54 0-80.1V174.2H31.4c-36.6 71.8-36.6 157.6 0 229.4l90-79.7z" fill="#FBBC05"/>
+                    <path d="M272 107.6c39.9 0 75.7 13.7 104 40.8l78-78C406.9 24 344.9 0 272 0 167.2 0 76.4 66.4 31.4 174.2l90 69.6C142.6 154.8 202 107.6 272 107.6z" fill="#EA4335"/>
+                </svg>
+              <span class="text-sm text-gray-700">Sign up with Google</span>
+                </button>
+
+                <p class="text-center text-sm text-gray-500 mt-3">
+                Already have an account?
+                <a href="SignIn.html" class="text-red-600 hover:underline">Log in</a>
+                </p>
+            </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer bg-black text-white mt-12">
+    <div class="max-w-screen-xl mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-8"> 
+            <div>
+                <h4 class="font-bold text-lg mb-3">Exclusive</h4>
+                <p class="text-sm text-gray-300 mb-4">Subscribe</p>
+                <p class="text-sm text-gray-400 mb-4">Get 10% off your first order</p>
+                <div class="relative w-full max-w-xs">
+                    <label for="footer-email" class="sr-only">Email</label>
+                    <div
+                        class="flex items-center bg-transparent border border-white  px-3 py-2 space-x-2"
+                        role="group"
+                    >
+                        <input
+                            id="footer-email"
+                            type="email"
+                            placeholder="Enter your email"
+                            class="bg-transparent text-white placeholder-gray-400 text-sm flex-1 h-8 focus:outline-none"
+                            aria-label="Email address"
+                        />
+                        <button
+                            type="button"
+                            aria-label="Subscribe"
+                            class="flex items-center justify-center w-9 h-9 bg-white/6 hover:bg-white/10 rounded-full transition"
+                        >
+                            <img src="/img/icon-send.png" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-3">Support</h4>
+                <p class="text-sm text-gray-400">111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.</p>
+                <p class="text-sm text-gray-400 mt-2">exclusive@gmail.com</p>
+                <p class="text-sm text-gray-400 mt-2">+88015-88888-9999</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-3">Account</h4>
+                <ul class="text-sm text-gray-400 space-y-2">
+                    <li><a href="#" class="hover:text-white">My Account</a></li>
+                    <li><a href="#" class="hover:text-white">Login / Register</a></li>
+                    <li><a href="#" class="hover:text-white">Cart</a></li>
+                    <li><a href="#" class="hover:text-white">Wishlist</a></li>
+                    <li><a href="#" class="hover:text-white">Shop</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-3">Quick Link</h4>
+                <ul class="text-sm text-gray-400 space-y-2">
+                    <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-white">Terms Of Use</a></li>
+                    <li><a href="#" class="hover:text-white">FAQ</a></li>
+                    <li><a href="#" class="hover:text-white">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-3">Download App</h4>
+                <p class="text-sm text-gray-400 mb-3">Save $3 with App New User Only</p>
+                <div class="flex items-start gap-4 mb-4">
+                    <img src="/img/qr-placeholder.png" alt="QR" class="w-20 h-20 object-cover bg-gray-800 rounded"/>
+                    <div class="flex flex-col gap-2">
+                        <img src="/img/png-transparent-google-play-store-logo-google-play-app-store-android-wallets-text-label-logo.png" alt="Google Play" class="w-28 h-auto object-contain"/>
+                        <img src="/img/download-appstore.png" alt="App Store" class="w-28 h-auto object-contain" />
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 mt-2">
+                    <a href="#" class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.877v-6.987H7.898v-2.89h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.462h-1.26c-1.242 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.987C18.343 21.128 22 16.991 22 12z"/></svg>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full  flex items-center justify-center hover:bg-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M22.162 5.656c-.793.352-1.645.59-2.538.697a4.48 4.48 0 0 0 1.965-2.472 8.933 8.933 0 0 1-2.827 1.082 4.468 4.468 0 0 0-7.61 4.072A12.678 12.678 0 0 1 3.15 4.897a4.468 4.468 0 0 0 1.382 5.959 4.44 4.44 0 0 1-2.024-.56v.057a4.468 4.468 0 0 0 3.583 4.377c-.566.154-1.163.188-1.762.07a4.47 4.47 0 0 0 4.174 3.101A8.958 8.958 0 0 1 2 19.54a12.647 12.647 0 0 0 6.857 2.01c8.228 0 12.737-6.816 12.737-12.737 0-.194-.004-.387-.013-.579a9.053 9.053 0 0 0 2.219-2.314z"/></svg>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full  flex items-center justify-center hover:bg-gray-700">
+                        <img src="/img/icon-instagram.png" alt="">
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full  flex items-center justify-center hover:bg-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.026-3.036-1.849-3.036-1.849 0-2.131 1.445-2.131 2.938v5.667H9.359V9h3.414v1.561h.049c.476-.9 1.637-1.849 3.37-1.849 3.603 0 4.267 2.372 4.267 5.459v6.281zM5.337 7.433c-1.144 0-2.069-.927-2.069-2.069 0-1.143.925-2.069 2.069-2.069 1.143 0 2.069.926 2.069 2.069 0 1.142-.926 2.069-2.069 2.069zM6.997 20.452H3.678V9h3.319v11.452z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 border-t border-gray-800 pt-6 text-center text-sm text-gray-400">© Copyright Rimel 2022. All right reserved</div>
+    </div>
+</div>
+</body>
+</html>
