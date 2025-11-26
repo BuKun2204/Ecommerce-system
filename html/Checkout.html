@@ -137,7 +137,7 @@
         <form id="CheckForm" class="space-y-6">
             <div>
                 <label for="fname" class="block mb-2 font-medium">First Name<span class="text-red-500">*</span></label>
-                <input type="text" id="fname" name="fname" class="w-full p-3 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-red-100 transition-shadow"/>
+                <input type="text" id="fname" name="fname" class="w-full p-3 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-red-100 transition-shadow" required/>
             </div>
             <div>
                 <label for="company-name" class="block mb-2 font-medium">Company Name</label>
@@ -145,7 +145,7 @@
             </div>
             <div>
                 <label for="street-address" class="block mb-2 font-medium">Street Address<span class="text-red-500">*</span></label>
-                <input type="text" id="street-address" name="street-address" class="w-full p-3 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-red-100 transition-shadow"/>
+                <input type="text" id="street-address" name="street-address" class="w-full p-3 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-red-100 transition-shadow" required/>
             </div>
             <div>
                 <label for="apartment" class="block mb-2 font-medium">Apartment, floor, etc. (optional)</label>
@@ -153,15 +153,15 @@
             </div>
             <div>
                 <label for="city" class="block mb-2 font-medium">Town / City<span class="text-red-500">*</span></label>
-                <input type="text" id="city" name="city" class="w-full p-3 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-red-100 transition-shadow"/>
+                <input type="text" id="city" name="city" class="w-full p-3 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-red-100 transition-shadow" required/>
             </div>
             <div>
                 <label for="phone-number" class="block mb-2 font-medium">Phone number<span class="text-red-500">*</span></label>
-                <input type="tel" id="phone-number" name="phone-number" class="w-full p-3 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-red-100 transition-shadow"/>
+                <input type="tel" id="phone-number" name="phone-number" class="w-full p-3 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-red-100 transition-shadow" required/>
             </div>
             <div>
                 <label for="email" class="block mb-2 font-medium">Email Address<span class="text-red-500">*</span></label>
-                <input type="email" id="email" name="email" class="w-full p-3 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-red-100 transition-shadow"/>
+                <input type="email" id="email" name="email" class="w-full p-3 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-red-100 transition-shadow" required/>
             </div> 
             <div class="flex items-center pt-2">
                 <input id="save-info" name="save-info" type="checkbox" checked
@@ -196,7 +196,7 @@
             <div class="space-y-10 pt-4 ">
                  <div class="flex justify-between text-sm text-gray-600 border-b border-gray-600 pb-5">
                     <span>Subtotal:</span>
-                    <span>$1750</span>
+                    <p class="order-subtotal">$0</p>
                 </div>
                 <div class="flex justify-between text-sm text-gray-600">
                     <span>Shipping:</span>
@@ -204,7 +204,7 @@
                 </div>
                 <div class="flex justify-between text-lg font-bold pt-5 border-t border-gray-600">
                     <span>Total:</span>
-                    <span>$1750</span>
+                    <p class="order-total">$0</p>
                 </div>
             </div>
             <div class="space-y-4">
@@ -342,7 +342,40 @@
         <div class="mt-8 border-t border-gray-800 pt-6 text-center text-sm text-gray-400">© Copyright Rimel 2022. All right reserved</div>
     </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        loadCheckout();
+    });
+
+    function loadCheckout() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const productsDiv = document.querySelector('.cart-products');
+        productsDiv.innerHTML = '';
+        let total = 0;
+
+        cart.forEach(item => {
+            const itemTotal = item.price * item.qty;
+            const itemOriginalTotal = item.originalPrice * item.qty;
+            const div = document.createElement('div');
+            div.classList.add('flex', 'items-center', 'gap-4');
+            div.innerHTML = `
+                <img src="$$ {item.img}" alt=" $${item.name}" class="w-20 h-20 object-cover rounded">
+                <div class="flex-1">
+                    <p class="font-semibold">${item.name}</p>
+                    <p class="text-gray-500">$$  {itemTotal} <span class="line-through">  $${itemOriginalTotal}</span></p>
+                    <p class="text-gray-500 text-sm">Quantity: ${item.qty}</p>
+                </div>
+            `;
+            productsDiv.appendChild(div);
+            total += itemTotal;
+        });
+
+        document.querySelector('.order-subtotal').textContent = `$${total}`;
+        document.querySelector('.order-total').textContent = `$${total}`; // Shipping free
+    }
+</script>
 </body>
- <script src="../js/toggleDropdown.js"></script>
-     <script src="../js/SignUp&SignIn.js"></script>
+<script src="../js/toggleDropdown.js"></script>
+<script src="../js/SignUp&SignIn.js"></script>
+<script src="../js/Cart.js"></script>
 </html>
