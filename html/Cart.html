@@ -6,6 +6,7 @@
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="/js/toggleDropdown.js"></script>
+    <script src="/js/Cart.js" defer></script>
 </head>
 <body>
     <div class="Header bg-black">
@@ -33,7 +34,7 @@
     <div class="Content1 flex justify-around items-center p-4 border-b border-gray-300">
         <p class="text-xl font-bold">Exclusive</p>
         <div class="ChucNang flex items-center">
-            <a href="HomepageAccount.html" class="px-2 underline underline-offset-4">Home</a>
+            <a href="HomepageAccount.html" class="px-2">Home</a>
             <a href="Contact.html" class="px-2">Contact</a>
             <a href="About.html" class="px-2">About us</a>
             <a href="SignUp.html" class="px-2">Sign up</a>
@@ -46,15 +47,17 @@
             </svg>
         </div>
         <div class="flex justify-center">
-        <button class=" cursor-pointer relative p-1 hover:text-black text-gray-600 rounded-tr-md rounded-tl-md transition">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21.364l-7.682-8.682a4.5 4.5 0 010-6.364z" />
-            </svg>   
-            <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-semibold rounded-full w-4 h-4 flex items-center justify-center">
-                4
-            </span>
-        </button>
+        <a href="Wishlist.html">
+            <button class=" cursor-pointer relative p-1 hover:text-black text-gray-600 rounded-tr-md rounded-tl-md transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21.364l-7.682-8.682a4.5 4.5 0 010-6.364z" />
+                </svg>   
+                <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-semibold rounded-full w-4 h-4 flex items-center justify-center">
+                    4
+                </span>
+            </button>
+        </a> 
     </div>
         <div class="flex justify-center">
         <button class="cursor-pointer relative p-1 hover:text-black text-gray-600 rounded-tr-md rounded-tl-md transition">
@@ -84,7 +87,7 @@
                 <div class="py-2">
                     
                     <!-- Manage My Account -->
-                    <a href="#" class="flex items-center gap-3 px-4 py-3 text-white hover:bg-white/10 transition">
+                    <a href="Account.html" class="flex items-center gap-3 px-4 py-3 text-white hover:bg-white/10 transition">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
                         </svg>
@@ -114,9 +117,8 @@
                         </svg>
                         <span class="text-sm">My Reviews</span>
                     </a>
-
                     <!-- Logout -->
-                    <a href="#" class="flex items-center gap-3 px-4 py-3 text-white hover:bg-white/10 transition">
+                    <a href="/index.html" class="flex items-center gap-3 px-4 py-3 text-white hover:bg-white/10 transition">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15" />
                         </svg>
@@ -138,57 +140,50 @@
         <h3 class="flex-1 text-center">Quantity</h3>
         <h3 class="flex-1 text-center">Subtotal</h3>
     </div>
-    <div class="flex flex-nowrap justify-between items-center shadow-sm p-4">
-        <div class="flex-1 flex items-center gap-4 pl-10">
-            <img src="/img/g27cq4-500x500 1.png" 
-                 alt="LCD Monitor" 
-                 class="w-14 h-14 object-cover rounded">
-            <span class="text-base">LCD Monitor</span>
-        </div> 
-        <div class="flex-1 text-center text-base">$650</div>
-        <div class="flex-1">
-            <div class="flex items-center border border-gray-300 rounded w-20 mx-auto">
-                  <input type="number" 
-                      value="01" 
-                      min="1" 
-                      class="w-full py-2 px-3 text-center text-sm focus:outline-none focus:ring-2 focus:ring-red-100 transition-shadow appearance-none"
-                      >
-                <div class="flex flex-col border-l border-gray-300">
-                    <button class="px-2 py-0.5 hover:bg-gray-100 text-xs">▲</button>
-                    <button class="px-2 py-0.5 hover:bg-gray-100 text-xs border-t border-gray-300">▼</button>
-                </div>
+    <!-- Dòng sản phẩm 1 -->
+<div class="cart-item flex flex-nowrap justify-between items-center shadow-sm p-4">
+    <div class="flex-1 flex items-center gap-4 pl-10">
+        <img src="/img/g27cq4-500x500 1.png" alt="LCD Monitor" class="w-14 h-14 object-cover rounded">
+        <span class="text-base">LCD Monitor</span>
+    </div> 
+    <div class="flex-1 text-center text-base item-price">$650</div>
+    
+    <div class="flex-1">
+        <div class="quantity-controller flex items-center border border-gray-300 rounded w-20 mx-auto">
+            <input type="number" value="1" min="1" 
+                   class="w-full py-2 px-3 text-center text-sm focus:outline-none appearance-none">
+            <div class="flex flex-col border-l border-gray-300">
+                <button class="btn-up px-2 py-0.5 hover:bg-gray-100 text-xs">▲</button>
+                <button class="btn-down px-2 py-0.5 hover:bg-gray-100 text-xs border-t border-gray-300">▼</button>
             </div>
         </div>
-        <div class="flex-1 text-center text-base font-medium">$650</div>
     </div>
-     <div class="flex flex-nowrap justify-between items-center shadow-sm p-4">
-        <div class="flex-1 flex items-center gap-4 pl-10">
-            <img src="/img/g92-2-500x500 1.png" 
-                 alt="H1 Gamepad" 
-                 class="w-14 h-14 object-contain rounded">
-            <span class="text-base">H1 Gamepad</span>
-        </div> 
-        <div class="flex-1 text-center text-base">$550</div>
-        <div class="flex-1">
-            <div class="flex items-center border border-gray-300 rounded w-20 mx-auto">
-                  <input type="number" 
-                      value="02" 
-                      min="1" 
-                      class="w-full py-2 px-3 text-center text-sm focus:outline-none focus:ring-2 focus:ring-red-100 transition-shadow appearance-none"
-                      >
-                <div class="flex flex-col border-l border-gray-300">
-                    <button class="px-2 py-0.5 hover:bg-gray-100 text-xs">▲</button>
-                    <button class="px-2 py-0.5 hover:bg-gray-100 text-xs border-t border-gray-300">▼</button>
-                </div>
+    <div class="flex-1 text-center text-base font-medium item-subtotal">$650</div>
+</div>
+<!-- Dòng sản phẩm 2 -->
+<div class="cart-item flex flex-nowrap justify-between items-center shadow-sm p-4">
+    <div class="flex-1 flex items-center gap-4 pl-10">
+        <img src="/img/g92-2-500x500 1.png" alt="H1 Gamepad" class="w-14 h-14 object-contain rounded">
+        <span class="text-base">H1 Gamepad</span>
+    </div> 
+    <div class="flex-1 text-center text-base item-price">$550</div>
+    <div class="flex-1">
+        <div class="quantity-controller flex items-center border border-gray-300 rounded w-20 mx-auto">
+            <input type="number" value="1" min="1" 
+                   class="w-full py-2 px-3 text-center text-sm focus:outline-none appearance-none">
+            <div class="flex flex-col border-l border-gray-300">
+                <button class="btn-up px-2 py-0.5 hover:bg-gray-100 text-xs">▲</button>
+                <button class="btn-down px-2 py-0.5 hover:bg-gray-100 text-xs border-t border-gray-300">▼</button>
             </div>
         </div>
-        <div class="flex-1 text-center text-base font-medium">$1100</div>
     </div>
+    <div class="flex-1 text-center text-base font-medium item-subtotal">$550</div>
+</div>
     <div class="flex justify-between items-center mt-8">
              <button class="cursor-pointer px-8 py-3 border text-black rounded-md font-medium hover:from-red-700 hover:to-red-600 transition transform duration-150 hover:-translate-y-0.5 active:scale-95 shadow-md">
                 <a href="HomepageAccount.html">Return To Shop</a>
             </button>
-            <button class="cursor-pointer px-8 py-3 text-black border rounded-md font-medium hover:from-red-700 hover:to-red-600 transition transform duration-150 hover:-translate-y-0.5 active:scale-95 shadow-md">
+            <button class="update-cart-btn cursor-pointer px-8 py-3 text-black border rounded-md font-medium hover:bg-red-600 hover:text-white transition shadow-md">
                 Update Cart
             </button>
     </div>
@@ -218,7 +213,7 @@
                     <!-- Subtotal -->
                     <div class="flex justify-between items-center py-3 border-b border-gray-300">
                         <span class="text-sm">Subtotal:</span>
-                        <span class="text-sm">$1750</span>
+                        <span class="text-sm Subtotal-total-price"></span>
                     </div>
                     
                     <!-- Shipping -->
@@ -226,13 +221,11 @@
                         <span class="text-sm">Shipping:</span>
                         <span class="text-sm">Free</span>
                     </div>
-                    
-                    <!-- Total -->
+                   <!-- Total -->
                     <div class="flex justify-between items-center py-3 border-b border-gray-300">
                         <span class="text-sm">Total:</span>
-                        <span class="text-sm font-semibold">$1750</span>
+                        <span class="text-sm font-semibold cart-total-price"> </span>
                     </div>
-                    
                     <!-- Checkout Button -->
                    <a href="Checkout.html">
                         <div class="flex justify-center mt-6 ">
@@ -241,7 +234,6 @@
                             </button>
                         </div>
                    </a> 
-                    
                 </div>
             </div>
 
