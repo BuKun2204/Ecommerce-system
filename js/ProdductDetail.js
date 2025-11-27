@@ -20,7 +20,7 @@ sizeOptions.forEach(btn => {
 const colorOptions = document.querySelectorAll('.colorOption');
 colorOptions.forEach(c => {
   c.addEventListener('click', () => {
-    colorOptions.forEach(cl => cl.classList.remove('ring-2', 'ring-b;ack'));
+    colorOptions.forEach(cl => cl.classList.remove('ring-2', 'ring-black'));
     c.classList.add('ring-2', 'ring-black');
   });
 });
